@@ -7,26 +7,24 @@ classDiagram
   class User {
     - name: String
     - account: Account
-    - features: Feature[]
-    - card: Card
+    - recently: Recently[]
+    - trophies: Trophy[]
     - news: News[]
   }
   
   class Account {
-    - number: String
-    - agency: String
-    - balance: Double
-    - limit: Double
+    - nickname: String
+    - level: Int
   }
   
-  class Feature {
+  class Recently {
     - icon: String
     - description: String
   }
   
-  class Card {
-    - number: String
-    - limit: Double
+  class Trophy {
+    - icon: String
+    - quantity: Int
   }
   
   class News {
@@ -35,7 +33,8 @@ classDiagram
   }
   
   User "1" *-- "1" Account
-  User "1" *-- "1..N" Feature
-  User "1" *-- "1" Card 
+  User "1" *-- "1..N" Recently
+  User "1" *-- "1..N" Trophy
   User "1" *-- "1..N" News
+
 ```
